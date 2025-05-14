@@ -10,7 +10,7 @@
 const int init_cap = 5;
 
 /**
- * internal function that resizes list arrays to new capacity
+ * internal function that resizes the array to a larger capacity
  */
 struct list *list_resize(struct list *list, int cap) {
     if(list != NULL) {
@@ -56,10 +56,10 @@ struct list *list_create() {
 /**
  * Create simple list initialized with values.
  */
-struct list *list_from_values(int argn, int values[]) {
+struct list *list_from_values(int len, int values[]) {
     struct list *res = list_create();
-    if(argn > 0 && values != NULL) {
-        for(int i=0; i < argn; i++) {
+    if(len > 0 && values != NULL) {
+        for(int i=0; i < len; i++) {
             list_add(res, (int)values[i]);
         }
     }
